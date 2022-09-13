@@ -1,5 +1,22 @@
 const inputs = document.querySelectorAll(".angle-input");
-console.log(inputs);
-
 const isTriangleButton = document.querySelector("#is-triangle-button");
-const output = document.querySelectorAll("#output");
+const output = document.querySelector("#output");
+
+
+function calculateSumOfAngles(angle1,angle2,angle3){
+    const sumOfAngles = angle1 + angle2 + angle3;
+    return sumOfAngles;
+}
+
+function isTriangle(){
+    console.log("clicked");
+    const sumOfAngles = calculateSumOfAngles(Number(inputs[0].value),Number(inputs[1].value),Number(inputs[2].value));
+    if(sumOfAngles===180){
+        output.innerText = "Yeeeyy, The angles form a triangle";
+    }
+    else{
+        output.innerText = "Oh no ! The angles do not form a triangle";
+    }
+}
+
+isTriangleButton.addEventListener('click',isTriangle);
