@@ -1,22 +1,22 @@
-const quizForm = document.querySelector(".quiz-form");
-const submitAnswerBtn = document.querySelector("#submit-ans-btn");
-const output = document.querySelector("#output");
+const quizF = document.querySelector(".quiz");
+const submitAnsBtn = document.querySelector("#submit-btn");
+const outputBox = document.querySelector("#output");
 
-const correctAnswers = ["90","right","28°","A = B = C = 60"];
+const correctAns = ["90","right","28°","A = B = C = 60"];
 
-function calculateScore(){
+function scoreCalculater(){
     let score = 0;
-    let index = 0;
-    const formResults = new FormData(quizForm);
-    for(let value of formResults.values()){
-        if(value === correctAnswers[index]){
+    let i = 0;
+    const results = new FormData(quizF);
+    for(let value of results.values()){
+        if(value === correctAns[i]){
             score ++;
         }
-        index ++;
+        i++;
     }
     console.log(score);
-    output.innerText = "your score is " + score;
+    outputBox.innerText = "your score is " + score;
     
 }
 
-submitAnswerBtn.addEventListener('click', calculateScore);
+submitAnsBtn.addEventListener('click', scoreCalculater);
